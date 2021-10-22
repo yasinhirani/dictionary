@@ -14,6 +14,12 @@ const getMeaning = async () => {
 //   console.log(data);
   if (!response.ok) {
     meaning.innerHTML = `😌 ${data.message}`;
+    searchWord.innerHTML = '';
+    meaning_example.innerHTML = '';
+    meaning_example.style.marginTop = '0';
+    partOfSpeech.innerHTML = '';
+    partOfSpeech.style.padding = '0 0';
+    btnAudio.style.opacity = 0;
   } else {
     searchWord.innerHTML = data[0].word;
     meaning.innerHTML = data[0].meanings[0].definitions[0].definition;
